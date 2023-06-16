@@ -1,6 +1,7 @@
-package domain.model;
+package domain.model.pessoal;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class DadosPessoal {
 
@@ -8,5 +9,6 @@ public class DadosPessoal {
     private CPF cpf;
     private LocalDate dataNascimento;
     private Sexo sexo;
+    private List<Habilidade> habilidades;
 
 }
