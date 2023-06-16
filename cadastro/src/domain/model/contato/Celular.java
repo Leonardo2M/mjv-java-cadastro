@@ -7,7 +7,7 @@ public class Celular {
 
     private Boolean whatsApp;
 
-    public Celular(String ddd, String numero) {
+    public Celular(String ddd, String numero, Boolean whatsApp) {
 
         if(ddd == null || !ddd.matches("\\d{2}")) {
             throw new IllegalArgumentException("ddd inválido!");
@@ -19,9 +19,10 @@ public class Celular {
 
         this.ddd = ddd;
         this.numero = numero;
+        this.whatsApp = whatsApp;
     }
 
-    public String getCelular() {
+    public String getNumero() {
         return "(" + ddd + ") " + numero;
     }
 
