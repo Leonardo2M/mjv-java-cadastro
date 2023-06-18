@@ -28,5 +28,7 @@ public class Main {
 
         ConversorService conversor = new ConversorService();
         conversor.toCSV(cadastro);
+
+        conversor.fromCSV();
     }
 }
