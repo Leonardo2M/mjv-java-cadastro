@@ -1,6 +1,7 @@
 package domain.model.profissional;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class PretensaoSalarial {
 
@@ -13,7 +14,7 @@ public class PretensaoSalarial {
     }
 
     public BigDecimal getValorMinimo() {
-        return valorMinimo;
+        return valorMinimo.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setValorMinimo(BigDecimal valorMinimo) {
@@ -21,7 +22,7 @@ public class PretensaoSalarial {
     }
 
     public BigDecimal getValorMaximo() {
-        return valorMaximo;
+        return valorMaximo.setScale(2, RoundingMode.HALF_UP);
     }
 
     public void setValorMaximo(BigDecimal valorMaximo) {

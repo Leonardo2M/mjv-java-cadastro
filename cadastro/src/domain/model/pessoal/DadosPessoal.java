@@ -34,7 +34,7 @@ public class DadosPessoal {
     }
 
     public String getDataNascimento() {
-        return this.dataNascimento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        return this.dataNascimento.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
     public String getSexo() {

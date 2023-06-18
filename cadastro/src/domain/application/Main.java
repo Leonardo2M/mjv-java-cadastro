@@ -23,7 +23,7 @@ public class Main {
                 .adicionarHabilidade("Proativo")
                 .adicionarHabilidade("Conhecimentos em Java")
                 .adicionarHabilidade("Conhecimentos em Spring Boot")
-                .dadosProfissional("Desempregado", "MJV School", BigDecimal.ZERO, Boolean.FALSE, new PretensaoSalarial(1500.0, 3000.0))
+                .dadosProfissional("Desenvolvedor", "MJV School", new BigDecimal("1487.32"), Boolean.FALSE, new PretensaoSalarial(1500.0, 3000.0))
                 .build();
 
         ConversorService conversor = new ConversorService();

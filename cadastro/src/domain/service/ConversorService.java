@@ -2,7 +2,6 @@ package domain.service;
 
 import domain.model.cadastro.Cadastro;
 
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -51,7 +50,10 @@ public class ConversorService {
     }
 
     public void toCSV(Cadastro cadastro) {
-        this.cabecalho();
+        if(!arquivoJaExiste()) {
+            this.cabecalho();
+        }
+
         StringBuilder cadastroCSV = new StringBuilder();
 
         cadastroCSV.append(cadastro.getDadosPessoal().getNome()).append(";");
@@ -84,6 +86,10 @@ public class ConversorService {
     }
 
     public void fromCSV() {
-        return ;
+        return;
+    }
+
+    public Boolean arquivoJaExiste() {
+        return Files.exists(PATH);
     }
 }
