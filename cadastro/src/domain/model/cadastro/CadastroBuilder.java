@@ -1,5 +1,6 @@
 package domain.model.cadastro;
 
+import domain.model.Endereco;
 import domain.model.contato.Celular;
 import domain.model.contato.DadosContato;
 import domain.model.contato.Email;
@@ -31,6 +32,12 @@ public class CadastroBuilder {
         this.dadosPessoal = new DadosPessoal(nome, new CPF(cpf), dataNascimento, sexo);
         return this;
     }
+
+    public CadastroBuilder adicionarEndereco(String logradouro, Long numero, String complemento, String bairro, String cidade, String estado) {
+        this.dadosPessoal.setEndereco(new Endereco(logradouro, numero, complemento, bairro, cidade, estado));
+        return this;
+    }
+
     public CadastroBuilder dadosContato(Email email, Telefone telefone, Celular celular) {
         this.dadosContato = new DadosContato(email, telefone, celular);
         return this;
@@ -40,6 +47,7 @@ public class CadastroBuilder {
         habilidades.add(new Habilidade(descricao));
         return this;
     }
+
     public CadastroBuilder dadosProfissional(String profissao, String empresa, BigDecimal salario, Boolean empregado, PretensaoSalarial pretensaoSalarial) {
         this.dadosProfissional = new DadosProfissional(profissao, empresa, salario, empregado, pretensaoSalarial);
         return this;

@@ -1,5 +1,7 @@
 package domain.model.pessoal;
 
+import domain.model.Endereco;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -12,6 +14,8 @@ public class DadosPessoal {
     private CPF cpf;
     private LocalDate dataNascimento;
     private Sexo sexo;
+
+    private Endereco endereco;
     private Set<Habilidade> habilidades = new HashSet<>();
 
     public DadosPessoal(String nome, CPF cpf, LocalDate dataNascimento, Sexo sexo) {
@@ -39,6 +43,14 @@ public class DadosPessoal {
 
     public Set<Habilidade> getHabilidades() {
         return habilidades;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public void adicionarHabilidade(Habilidade habilidade) {
